@@ -2,9 +2,11 @@ import { CiBookmark } from "react-icons/ci";
 import { FaEye } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { IoMdShare } from "react-icons/io";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     rating,
     total_view,
@@ -41,7 +43,7 @@ const NewsCard = ({ news }) => {
         <p>
           {details.length > 150 ? `${details.slice(0, 150)}...` : details}
         </p>
-        <a className="text-primary font-semibold hover:underline mt-2 cursor-pointer">Read More</a>
+        <Link to={`/news-details/${id}`} className="text-primary font-semibold hover:underline mt-2 cursor-pointer">Read More</Link>
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t text-sm text-gray-600">
